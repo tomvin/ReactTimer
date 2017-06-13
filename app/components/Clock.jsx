@@ -22,10 +22,10 @@ var Clock = React.createClass({
     return minutes + ':' + seconds;
   },
   render: function () {
-    var {totalSeconds} = this.props;
+    var {totalSeconds, countdownStatus} = this.props;
 
     return (
-      <div className="clock">
+      <div className={"clock " + (countdownStatus==='paused' ? 'clock-red' : '')}>
         <span className="clock-text">
           {this.formatSeconds(totalSeconds)}
         </span>
